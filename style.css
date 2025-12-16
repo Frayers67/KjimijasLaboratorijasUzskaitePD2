@@ -1,0 +1,258 @@
+:root {
+    --blue-primary: #007bff; /* Tuvāk tumšajai zilai, ko izmanto formās */
+    --blue-sidebar: #017bff; /* Zilā krāsa sānjoslai */
+    --light-blue: #e9f5ff; /* Sekundārā poga (3. forma) */
+    --pink-error: #ff6347; /* Sarkanīgi rozā kļūdu poga */
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Viegli pelēks fons lapai */
+    color: var(--text-color);
+}
+
+/* 1. un 2. formas konteiners (sadalījums 30%/70%) */
+.container {
+    display: flex;
+    height: 100vh;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 35%; /* Kreisā daļa */
+    padding: 40px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.blue-bg {
+    background: linear-gradient(135deg, var(--blue-primary) 0%, #00bfff 100%);
+}
+
+.sidebar h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.sidebar p {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.content {
+    width: 65%; /* Labā daļa */
+    padding: 80px 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 1. formas specifiskais stils */
+.content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--blue-primary);
+}
+
+.description-text {
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Pogas */
+.button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.primary {
+    background-color: var(--blue-primary);
+    color: white;
+}
+
+.secondary {
+    background-color: white;
+    color: var(--blue-primary);
+    border: 1px solid var(--blue-primary);
+    padding: 11px 24px; /* Kompensē biezumu */
+}
+
+.primary:hover { background-color: #0056b3; }
+.secondary:hover { background-color: var(--light-blue); }
+
+/* 2. formas specifiskais stils (Pieslēgšanās) */
+.login-content {
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+.login-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.register-text {
+    margin-top: 20px;
+}
+
+.register-text a {
+    color: var(--blue-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Pārejas saite (Atpakaļ uz sākumlapu) */
+.back-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.back-link:hover {
+    color: var(--blue-primary);
+}
+
+/* 3. formas stils (Tabula) */
+.full-page-container {
+    padding: 50px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.back-link.top-left {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    margin-bottom: 0;
+}
+
+.full-page-container header h1 {
+    font-size: 2.2em;
+    color: var(--blue-primary);
+    margin-top: 30px;
+}
+
+.header-desc {
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.search-and-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.search-and-filter input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Tabula */
+.data-table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    overflow: hidden; /* Nodrošina noapaļotos stūrus */
+}
+
+thead {
+    background-color: #017bff; /* Tumši zils fons kā paraugā */
+    color: white;
+}
+
+th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+td {
+    padding: 12px 15px;
+    color: #555;
+}
+
+/* Ziņot par kļūdu poga */
+.error-report {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.error-report.right-bottom {
+    /* 3. formai to vajag pie tabulas apakšas labajā pusē */
+    position: absolute; 
+    bottom: 50px;
+    right: 80px;
+    /* Pārvieto pozīciju atbilstoši .full-page-container */
+}
+
+.error-button {
+    background-color: #ff8572; /* Rozā-oranžs tonis */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pink-button {
+    background-color: var(--pink-error); /* 3. formas sarkanīgāk rozā poga */
+}
