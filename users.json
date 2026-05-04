@@ -10,15 +10,3 @@
         }
     ]
 }
-{
-    "users": [
-        {
-            "id": "2",
-            "vards": "frayers",
-            "uzvards": "67",
-            "loma": "admin",
-            "parole": "12345678",
-            "Komentāri": "Daži komentāri"
-        }
-    ]
-}
